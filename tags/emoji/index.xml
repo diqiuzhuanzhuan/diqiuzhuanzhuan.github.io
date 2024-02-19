@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>emoji on Feynman&#39;s Lens</title>
+    <link>https://diqiuzhuanzhuan.github.io/tags/emoji/</link>
+    <description>Recent content in emoji on Feynman&#39;s Lens</description>
+    <image>
+      <title>Feynman&#39;s Lens</title>
+      <url>https://diqiuzhuanzhuan.github.io/images/papermod-cover.png</url>
+      <link>https://diqiuzhuanzhuan.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 05 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://diqiuzhuanzhuan.github.io/tags/emoji/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emoji Support</title>
+      <link>https://diqiuzhuanzhuan.github.io/posts/emoji-support/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/posts/emoji-support/</guid>
+      <description>Guide to emoji usage in Hugo</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Feynman&#39;s Lens</title>
+    <link>https://diqiuzhuanzhuan.github.io/tags/</link>
+    <description>Recent content in Tags on Feynman&#39;s Lens</description>
+    <image>
+      <title>Feynman&#39;s Lens</title>
+      <url>https://diqiuzhuanzhuan.github.io/images/papermod-cover.png</url>
+      <link>https://diqiuzhuanzhuan.github.io/images/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 22 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://diqiuzhuanzhuan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>computer vision</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/computer-vision/</link>
+      <pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/computer-vision/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>multimodality</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/multimodality/</link>
+      <pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/multimodality/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>position embedding</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/position-embedding/</link>
+      <pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/position-embedding/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>position encoding</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/position-encoding/</link>
+      <pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/position-encoding/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>positional embedding</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/positional-embedding/</link>
+      <pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/positional-embedding/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>positional encoding</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/positional-encoding/</link>
+      <pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/positional-encoding/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docs</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/docs/</link>
+      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/docs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>PaperMod</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/papermod/</link>
+      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/papermod/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>css</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/css/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/css/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>html</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/html/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/html/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>markdown</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/markdown/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/markdown/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>themes</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/themes/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/themes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>code</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/code/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>gist</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/gist/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/gist/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>privacy</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/privacy/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/privacy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>shortcodes</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/shortcodes/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/shortcodes/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>syntax</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/syntax/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/syntax/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>emoji</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/emoji/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/emoji/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
