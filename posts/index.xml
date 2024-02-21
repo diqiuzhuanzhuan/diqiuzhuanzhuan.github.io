@@ -2,78 +2,78 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Loong&#39;s Lens</title>
-    <link>https://diqiuzhuanzhuan.github.io/posts/</link>
+    <link>/posts/</link>
     <description>Recent content in Posts on Loong&#39;s Lens</description>
     <image>
       <title>Loong&#39;s Lens</title>
-      <url>https://diqiuzhuanzhuan.github.io/images/papermod-cover.png</url>
-      <link>https://diqiuzhuanzhuan.github.io/images/papermod-cover.png</link>
+      <url>images/papermod-cover.png</url>
+      <link>images/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 22 Apr 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://diqiuzhuanzhuan.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Markdown Syntax Guide For L2</title>
-      <link>https://diqiuzhuanzhuan.github.io/posts/markdown-syntax.fr/</link>
+      <link>/posts/markdown-syntax.fr/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/posts/markdown-syntax.fr/</guid>
+      <guid>/posts/markdown-syntax.fr/</guid>
       <description>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</description>
     </item>
     <item>
       <title>Markdown Syntax Guide For RTL</title>
-      <link>https://diqiuzhuanzhuan.github.io/posts/markdown-syntax.fa/</link>
+      <link>/posts/markdown-syntax.fa/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/posts/markdown-syntax.fa/</guid>
+      <guid>/posts/markdown-syntax.fa/</guid>
       <description>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</description>
     </item>
     <item>
       <title>Evolution of Multimodality</title>
-      <link>https://diqiuzhuanzhuan.github.io/posts/evolution-of-multimodality/</link>
+      <link>/posts/evolution-of-multimodality/</link>
       <pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/posts/evolution-of-multimodality/</guid>
+      <guid>/posts/evolution-of-multimodality/</guid>
       <description>A series of papers about multimodality.</description>
     </item>
     <item>
       <title>Positional Encoding in Transformer</title>
-      <link>https://diqiuzhuanzhuan.github.io/posts/position-encoding-in-transformers/position-encoding-in-transformer/</link>
+      <link>/posts/position-encoding-in-transformers/position-encoding-in-transformer/</link>
       <pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/posts/position-encoding-in-transformers/position-encoding-in-transformer/</guid>
+      <guid>/posts/position-encoding-in-transformers/position-encoding-in-transformer/</guid>
       <description>A series of papers about positional encoding.</description>
     </item>
     <item>
       <title>Markdown Syntax Guide</title>
-      <link>https://diqiuzhuanzhuan.github.io/posts/markdown-syntax/</link>
+      <link>/posts/markdown-syntax/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/posts/markdown-syntax/</guid>
+      <guid>/posts/markdown-syntax/</guid>
       <description>Sample article showcasing basic Markdown syntax and formatting for HTML elements.</description>
     </item>
     <item>
       <title>Code Syntax Guide</title>
-      <link>https://diqiuzhuanzhuan.github.io/posts/code_syntax/</link>
+      <link>/posts/code_syntax/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/posts/code_syntax/</guid>
+      <guid>/posts/code_syntax/</guid>
       <description>Sample article showcasing basic code syntax and formatting for HTML elements.</description>
     </item>
     <item>
       <title>Rich Content and Shortcodes</title>
-      <link>https://diqiuzhuanzhuan.github.io/posts/rich-content/</link>
+      <link>/posts/rich-content/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/posts/rich-content/</guid>
+      <guid>/posts/rich-content/</guid>
       <description>A brief description of Hugo Shortcodes</description>
     </item>
     <item>
       <title>Math Typesetting</title>
-      <link>https://diqiuzhuanzhuan.github.io/posts/math-typesetting/</link>
+      <link>/posts/math-typesetting/</link>
       <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/posts/math-typesetting/</guid>
+      <guid>/posts/math-typesetting/</guid>
       <description>A brief guide to setup KaTeX</description>
     </item>
     <item>
       <title>Emoji Support</title>
-      <link>https://diqiuzhuanzhuan.github.io/posts/emoji-support/</link>
+      <link>/posts/emoji-support/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/posts/emoji-support/</guid>
+      <guid>/posts/emoji-support/</guid>
       <description>Guide to emoji usage in Hugo</description>
     </item>
   </channel>

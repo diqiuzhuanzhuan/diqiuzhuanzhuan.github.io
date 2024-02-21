@@ -2,36 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>PaperMod on Loong&#39;s Lens</title>
-    <link>https://diqiuzhuanzhuan.github.io/tags/papermod/</link>
+    <link>/tags/papermod/</link>
     <description>Recent content in PaperMod on Loong&#39;s Lens</description>
     <image>
       <title>Loong&#39;s Lens</title>
-      <url>https://diqiuzhuanzhuan.github.io/images/papermod-cover.png</url>
-      <link>https://diqiuzhuanzhuan.github.io/images/papermod-cover.png</link>
+      <url>images/papermod-cover.png</url>
+      <link>images/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 20 Jan 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://diqiuzhuanzhuan.github.io/tags/papermod/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/papermod/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Install / Update PaperMod</title>
-      <link>https://diqiuzhuanzhuan.github.io/posts/papermod/papermod-installation/</link>
+      <link>/posts/papermod/papermod-installation/</link>
       <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/posts/papermod/papermod-installation/</guid>
+      <guid>/posts/papermod/papermod-installation/</guid>
       <description>Read aboout Install and Update instructions and sampled configuration templates</description>
     </item>
     <item>
       <title>Features / Mods</title>
-      <link>https://diqiuzhuanzhuan.github.io/posts/papermod/papermod-features/</link>
+      <link>/posts/papermod/papermod-features/</link>
       <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/posts/papermod/papermod-features/</guid>
+      <guid>/posts/papermod/papermod-features/</guid>
       <description>Learn About All Features in PaperMod</description>
     </item>
     <item>
       <title>Social-Icons / Share-Icons</title>
-      <link>https://diqiuzhuanzhuan.github.io/posts/papermod/papermod-icons/</link>
+      <link>/posts/papermod/papermod-icons/</link>
       <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/posts/papermod/papermod-icons/</guid>
+      <guid>/posts/papermod/papermod-icons/</guid>
       <description>List of all Icons supported by PaperMod</description>
     </item>
   </channel>

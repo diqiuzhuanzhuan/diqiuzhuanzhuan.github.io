@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>LLMs on Loong&#39;s Lens</title>
-    <link>https://diqiuzhuanzhuan.github.io/categories/llms/</link>
+    <link>/categories/llms/</link>
     <description>Recent content in LLMs on Loong&#39;s Lens</description>
     <image>
       <title>Loong&#39;s Lens</title>
-      <url>https://diqiuzhuanzhuan.github.io/images/papermod-cover.png</url>
-      <link>https://diqiuzhuanzhuan.github.io/images/papermod-cover.png</link>
+      <url>images/papermod-cover.png</url>
+      <link>images/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 22 Apr 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://diqiuzhuanzhuan.github.io/categories/llms/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/categories/llms/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Evolution of Multimodality</title>
-      <link>https://diqiuzhuanzhuan.github.io/posts/evolution-of-multimodality/</link>
+      <link>/posts/evolution-of-multimodality/</link>
       <pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/posts/evolution-of-multimodality/</guid>
+      <guid>/posts/evolution-of-multimodality/</guid>
       <description>A series of papers about multimodality.</description>
     </item>
     <item>
       <title>Positional Encoding in Transformer</title>
-      <link>https://diqiuzhuanzhuan.github.io/posts/position-encoding-in-transformers/position-encoding-in-transformer/</link>
+      <link>/posts/position-encoding-in-transformers/position-encoding-in-transformer/</link>
       <pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/posts/position-encoding-in-transformers/position-encoding-in-transformer/</guid>
+      <guid>/posts/position-encoding-in-transformers/position-encoding-in-transformer/</guid>
       <description>A series of papers about positional encoding.</description>
     </item>
   </channel>
