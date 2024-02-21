@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>positional encoding on Loong&#39;s Lens</title>
-    <link>/tags/positional-encoding/</link>
+    <link>https://diqiuzhuanzhuan.github.io/tags/positional-encoding/</link>
     <description>Recent content in positional encoding on Loong&#39;s Lens</description>
     <image>
       <title>Loong&#39;s Lens</title>
-      <url>images/papermod-cover.png</url>
-      <link>images/papermod-cover.png</link>
+      <url>https://diqiuzhuanzhuan.github.io/images/papermod-cover.png</url>
+      <link>https://diqiuzhuanzhuan.github.io/images/papermod-cover.png</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 10 Mar 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/positional-encoding/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://diqiuzhuanzhuan.github.io/tags/positional-encoding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Positional Encoding in Transformer</title>
-      <link>/posts/position-encoding-in-transformers/position-encoding-in-transformer/</link>
+      <link>https://diqiuzhuanzhuan.github.io/posts/position-encoding-in-transformers/position-encoding-in-transformer/</link>
       <pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>/posts/position-encoding-in-transformers/position-encoding-in-transformer/</guid>
+      <guid>https://diqiuzhuanzhuan.github.io/posts/position-encoding-in-transformers/position-encoding-in-transformer/</guid>
       <description>A series of papers about positional encoding.</description>
     </item>
   </channel>
