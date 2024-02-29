@@ -11,20 +11,55 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 22 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jan 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://diqiuzhuanzhuan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>continuous pretraining</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/continuous-pretraining/</link>
+      <pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/continuous-pretraining/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>data</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/data/</link>
+      <pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/data/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>pretraining</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/pretraining/</link>
+      <pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/pretraining/</guid>
+      <description></description>
+    </item>
     <item>
       <title>computer vision</title>
       <link>https://diqiuzhuanzhuan.github.io/tags/computer-vision/</link>
-      <pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Dec 2023 00:00:00 +0000</pubDate>
       <guid>https://diqiuzhuanzhuan.github.io/tags/computer-vision/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Image generation</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/image-generation/</link>
+      <pubDate>Mon, 11 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/image-generation/</guid>
       <description></description>
     </item>
     <item>
       <title>multimodality</title>
       <link>https://diqiuzhuanzhuan.github.io/tags/multimodality/</link>
-      <pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Dec 2023 00:00:00 +0000</pubDate>
       <guid>https://diqiuzhuanzhuan.github.io/tags/multimodality/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>video generation</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/video-generation/</link>
+      <pubDate>Mon, 11 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/video-generation/</guid>
       <description></description>
     </item>
     <item>
@@ -137,6 +172,20 @@
       <link>https://diqiuzhuanzhuan.github.io/tags/emoji/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       <guid>https://diqiuzhuanzhuan.github.io/tags/emoji/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>diffusion models</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/diffusion-models/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/diffusion-models/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>stable diffusion</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/stable-diffusion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/stable-diffusion/</guid>
       <description></description>
     </item>
   </channel>
