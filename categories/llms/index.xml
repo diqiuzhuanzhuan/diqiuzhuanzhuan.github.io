@@ -42,6 +42,13 @@
       <description>A series of papers about Video Generation.</description>
     </item>
     <item>
+      <title>Problems you may encounter during distributed training</title>
+      <link>https://diqiuzhuanzhuan.github.io/posts/problems-you-may-encounter-while-distributed-training/</link>
+      <pubDate>Fri, 11 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/posts/problems-you-may-encounter-while-distributed-training/</guid>
+      <description>A series of papers about problems about distributed training.</description>
+    </item>
+    <item>
       <title>Evolution of Multimodality</title>
       <link>https://diqiuzhuanzhuan.github.io/posts/evolution-of-multimodality/</link>
       <pubDate>Sat, 22 Apr 2023 00:00:00 +0000</pubDate>
@@ -56,11 +63,11 @@
       <description>A series of papers about positional encoding.</description>
     </item>
     <item>
-      <title>know about diffusion models</title>
+      <title>Know about diffusion models</title>
       <link>https://diqiuzhuanzhuan.github.io/posts/know-about-diffusion-models/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://diqiuzhuanzhuan.github.io/posts/know-about-diffusion-models/</guid>
-      <description>try to understand diffusion models.</description>
+      <description>Try to understand diffusion models.</description>
     </item>
   </channel>
 </rss>
