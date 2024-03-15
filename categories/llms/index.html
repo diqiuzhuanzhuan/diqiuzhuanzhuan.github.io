@@ -182,18 +182,6 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Continuous Pretraining
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p></p>
-  </div>
-  <footer class="entry-footer"><span title='2023-12-29 00:00:00 +0000 UTC'>December 29, 2023</span>&nbsp;·&nbsp;0 min&nbsp;·&nbsp;Loong</footer>
-  <a class="entry-link" aria-label="post link to Continuous Pretraining" href="https://diqiuzhuanzhuan.github.io/posts/continuous-pretraining/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
     <h2 class="entry-hint-parent">Image Generation
     </h2>
   </header>
@@ -212,10 +200,9 @@
   <div class="entry-content">
     <p>Recently numerous AGI applications catch the eyes of all of the people on the internet.
 DiT VDT VDT (lu et al.1)
-Latte In this work, the authors present a novel latent diffusion transformers, which adopts a video Transformer as the backbone, and four variants are introduced to efficiently spatio
-Lu et al., VDT: General-purpose Video Diffusion Transformers via Mask Modeling, CVPR 2023. ↩︎</p>
+Latte In this work, the authors present a novel latent diffusion transformers (Latte2), which adopts a video Transformer as the backbone. Latte utilizes a pre-trained variational autoencoder to encode input video into features in latent space, where tokens are extracted from encoded features. Then a series of Transformer blocks are applied to encode these tokens....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-12-11 00:00:00 +0000 UTC'>December 11, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;author: Loong</footer>
+  <footer class="entry-footer"><span title='2023-12-11 00:00:00 +0000 UTC'>December 11, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;author: Loong</footer>
   <a class="entry-link" aria-label="post link to Video Generation" href="https://diqiuzhuanzhuan.github.io/posts/video-generation/"></a>
 </article>
 
@@ -225,9 +212,10 @@ Lu et al., VDT: General-purpose Video Diffusion Transformers via Mask Modeling, 
     </h2>
   </header>
   <div class="entry-content">
-    <p>Large Language Models (LLMs) have show great promise in various artificial intelligence applications. It is becoming a trend to train a Large Language Model. Nevertheless even for many senior AI engineers, training these complex models remain a significant challenge.</p>
+    <p>Large Language Models (LLMs) have show great promise in various artificial intelligence applications. It is becoming a trend to train a Large Language Model. Nevertheless even for many senior AI engineers, training these complex models remain a significant challenge. Here lists a series of issues you may encounter in the future.
+torch.distributed.barrier() stuck during training with multi gpus At first, you should try to set the environment variable NCCL_P2P_DISABLE=1. If it works out, the solution is probably to disable ACS of Pcie in BIOS....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-08-11 00:00:00 +0000 UTC'>August 11, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;author: Loong</footer>
+  <footer class="entry-footer"><span title='2023-08-11 00:00:00 +0000 UTC'>August 11, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;author: Loong</footer>
   <a class="entry-link" aria-label="post link to Problems you may encounter during distributed training" href="https://diqiuzhuanzhuan.github.io/posts/problems-you-may-encounter-while-distributed-training/"></a>
 </article>
 
