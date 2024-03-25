@@ -21,6 +21,13 @@
       <description>A series of papers about data for training LLMs.</description>
     </item>
     <item>
+      <title>Continuous Pretraining</title>
+      <link>https://diqiuzhuanzhuan.github.io/posts/continuous-pretraining/</link>
+      <pubDate>Fri, 29 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/posts/continuous-pretraining/</guid>
+      <description>A series of papers about Continuous Pretraining.</description>
+    </item>
+    <item>
       <title>Image Generation</title>
       <link>https://diqiuzhuanzhuan.github.io/posts/image-generation/</link>
       <pubDate>Mon, 11 Dec 2023 00:00:00 +0000</pubDate>
@@ -54,13 +61,6 @@
       <pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
       <guid>https://diqiuzhuanzhuan.github.io/posts/position-encoding-in-transformers/position-encoding-in-transformer/</guid>
       <description>A series of papers about positional encoding.</description>
-    </item>
-    <item>
-      <title></title>
-      <link>https://diqiuzhuanzhuan.github.io/posts/continuous-pretraining/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/posts/continuous-pretraining/</guid>
-      <description>[^1]&amp;mdash; title: &amp;ldquo;Continuous Pretraining&amp;rdquo; author: [Loong] date: &amp;ldquo;2023-12-29&amp;rdquo; description: &amp;ldquo;A series of papers about Continuous Pretraining.&amp;rdquo; summary: &amp;quot;&amp;quot; tags: [&amp;ldquo;pretraining&amp;rdquo;, &amp;ldquo;continuous pretraining&amp;rdquo;] categories: [&amp;lsquo;LLMs&amp;rsquo;] aliases: [&amp;ldquo;continue-pretraining&amp;rdquo;] math: true ShowToc: true TocOpen: true draft: false #cover: #image: images/clip_illustrate.png #caption: &amp;ldquo;Generated using OG Image Playground by Vercel</description>
     </item>
     <item>
       <title>Know about diffusion models</title>
