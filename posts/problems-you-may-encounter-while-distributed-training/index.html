@@ -120,8 +120,8 @@
   "keywords": [
     "distributed training"
   ],
-  "articleBody": "Large Language Models (LLMs) have show great promise in various artificial intelligence applications. It is becoming a trend to train a Large Language Model. Nevertheless even for many senior AI engineers, training these complex models remain a significant challenge. Here lists a series of issues you may encounter in the future.\ntorch.distributed.barrier() stuck during training with multi gpus At first, you should try to set the environment variable NCCL_P2P_DISABLE=1. If it works out, the solution is probably to disable ACS of Pcie in BIOS. You may need to reference to the link.\nraise RuntimeError(“Ninja is required to load C++ extensions”) You need to make sure Ninja compile system is installed.\nsudo apt install ninja-build subprocess.Called.ProcessError: Command ‘[‘which’, ‘c++’]’ required no-zero exit status 1. This error means each node has to install c++ compiler. So just check if it has been installed on every machine.\nConnection reset by peer in function _create_c10d_store in file rendezvous.py. The default TCP server is set to run on the process denoted as rank0. However, since many processes start at different time, the process on rank0 can’t ensure that the server has already started before all of other client processes start. To address this issue, we need to ensure that the server (rank0) starts first.\nAttributeError: ‘LlamaAttention’ object has no attribute ‘rope_theta’. To solve this problem, update transformers to 4.34.0 or above (Link).\n",
-  "wordCount" : "227",
+  "articleBody": "Large Language Models (LLMs) have show great promise in various artificial intelligence applications. It is becoming a trend to train a Large Language Model. Nevertheless even for many senior AI engineers, training these complex models remain a significant challenge. Here lists a series of issues you may encounter in the future.\ntorch.distributed.barrier() stuck during training with multi gpus At first, you should try to set the environment variable NCCL_P2P_DISABLE=1. If it works out, the solution is probably to disable ACS of Pcie in BIOS. You may need to reference to the link.\nraise RuntimeError(“Ninja is required to load C++ extensions”) You need to make sure Ninja compile system is installed.\nsudo apt install ninja-build subprocess.Called.ProcessError: Command ‘[‘which’, ‘c++’]’ required no-zero exit status 1. This error means each node has to install c++ compiler. So just check if it has been installed on every machine.\nConnection reset by peer in function _create_c10d_store in file rendezvous.py. The default TCP server is set to run on the process denoted as rank0. However, since many processes start at different time, the process on rank0 can’t ensure that the server has already started before all of other client processes start. To address this issue, we need to ensure that the server (rank0) starts first.\nAttributeError: ‘LlamaAttention’ object has no attribute ‘rope_theta’. To solve this problem, update transformers to 4.34.0 or above (Link).\nHow to install and update cuda? Reference to this.\n",
+  "wordCount" : "236",
   "inLanguage": "en",
   "datePublished": "2023-08-11T00:00:00Z",
   "dateModified": "2023-08-11T00:00:00Z",
@@ -238,7 +238,9 @@
                 <li>
                     <a href="#connection-reset-by-peer-in-function-_create_c10d_store-in-file-rendezvouspy" aria-label="Connection reset by peer in function _create_c10d_store in file rendezvous.py.">Connection reset by peer in function _create_c10d_store in file rendezvous.py.</a></li>
                 <li>
-                    <a href="#attributeerror-llamaattention-object-has-no-attribute-rope_theta" aria-label="AttributeError: &lsquo;LlamaAttention&rsquo; object has no attribute &lsquo;rope_theta&rsquo;.">AttributeError: &lsquo;LlamaAttention&rsquo; object has no attribute &lsquo;rope_theta&rsquo;.</a>
+                    <a href="#attributeerror-llamaattention-object-has-no-attribute-rope_theta" aria-label="AttributeError: &lsquo;LlamaAttention&rsquo; object has no attribute &lsquo;rope_theta&rsquo;.">AttributeError: &lsquo;LlamaAttention&rsquo; object has no attribute &lsquo;rope_theta&rsquo;.</a></li>
+                <li>
+                    <a href="#how-to-install-and-update-cuda" aria-label="How to install and update cuda?">How to install and update cuda?</a>
                 </li>
             </ul>
         </div>
@@ -257,6 +259,8 @@
 <p>The default TCP server is set to run on the process denoted as rank0. However, since many processes start at different time, the process on rank0 can&rsquo;t ensure that the server has already started before all of other client processes start. To address this issue, we need to ensure that the server (rank0) starts first.</p>
 <h4 id="attributeerror-llamaattention-object-has-no-attribute-rope_theta">AttributeError: &lsquo;LlamaAttention&rsquo; object has no attribute &lsquo;rope_theta&rsquo;.<a hidden class="anchor" aria-hidden="true" href="#attributeerror-llamaattention-object-has-no-attribute-rope_theta">#</a></h4>
 <p>To solve this problem, update transformers to 4.34.0 or above (<a href="https://github.com/microsoft/DeepSpeedExamples/issues/814">Link</a>).</p>
+<h4 id="how-to-install-and-update-cuda">How to install and update cuda?<a hidden class="anchor" aria-hidden="true" href="#how-to-install-and-update-cuda">#</a></h4>
+<p>Reference to <a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html">this</a>.</p>
 
 
   </div>
