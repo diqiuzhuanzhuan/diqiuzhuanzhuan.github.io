@@ -120,8 +120,8 @@
   "keywords": [
     "distributed training"
   ],
-  "articleBody": "Large Language Models (LLMs) have show great promise in various artificial intelligence applications. It is becoming a trend to train a Large Language Model. Nevertheless even for many senior AI engineers, training these complex models remain a significant challenge. Here lists a series of issues you may encounter in the future.\ntorch.distributed.barrier() stuck during training with multi gpus At first, you should try to set the environment variable NCCL_P2P_DISABLE=1. If it works out, the solution is probably to disable ACS of Pcie in BIOS. You may need to reference to the link.\nraise RuntimeError(“Ninja is required to load C++ extensions”) You need to make sure Ninja compile system is installed.\nsudo apt install ninja-build subprocess.Called.ProcessError: Command ‘[‘which’, ‘c++’]’ required no-zero exit status 1. This error means each node has to install c++ compiler. So just check if it has been installed on every machine.\nConnection reset by peer in function _create_c10d_store in file rendezvous.py. The default TCP server is set to run on the process denoted as rank0. However, since many processes start at different time, the process on rank0 can’t ensure that the server has already started before all of other client processes start. To address this issue, we need to ensure that the server (rank0) starts first.\nAttributeError: ‘LlamaAttention’ object has no attribute ‘rope_theta’. To solve this problem, update transformers to 4.34.0 or above (Link).\nHow to install and update cuda? Reference to this.\nimprove your efficiency of llm resize your vocabulary equivalent to multiple of 8.\n",
-  "wordCount" : "249",
+  "articleBody": "Large Language Models (LLMs) have show great promise in various artificial intelligence applications. It is becoming a trend to train a Large Language Model. Nevertheless even for many senior AI engineers, training these complex models remain a significant challenge. Here lists a series of issues you may encounter in the future.\ntorch.distributed.barrier() stuck during training with multi gpus At first, you should try to set the environment variable ‘NCCL_P2P_DISABLE=1’. If it works out, the solution is probably to disable ACS of Pcie in BIOS. You may need to reference to the link.\nraise RuntimeError(“Ninja is required to load C++ extensions”) You need to make sure Ninja compile system has been installed.\nsudo apt install ninja-build subprocess.Called.ProcessError: Command ‘[‘which’, ‘c++’]’ required no-zero exit status 1. This error means each node has to install c++ compiler. So just check if it has been installed on every machine.\nConnection reset by peer in function _create_c10d_store in file rendezvous.py. The default TCP server is set to run on the process denoted as rank0. However, since many processes start at different time, the process on rank0 can’t ensure that the server has already started before all of other client processes start. To address this issue, we need to ensure that the server (rank0) starts first.\nAttributeError: ‘LlamaAttention’ object has no attribute ‘rope_theta’. To solve this problem, update transformers to 4.34.0 or above (Link).\nHow to install and update cuda? Reference to this.\nimprove your efficiency of llm resize your vocabulary equivalent to multiple of 8\nWhat should we do if the version of cuda is not match with my torch? The best solution is that install different version of cuda first, and switch on your demand. How to do it? Just run this command and select your desired item.\nupdate-alternatives --config cuda ",
+  "wordCount" : "297",
   "inLanguage": "en",
   "datePublished": "2023-08-11T00:00:00Z",
   "dateModified": "2023-08-11T00:00:00Z",
@@ -242,7 +242,9 @@
                 <li>
                     <a href="#how-to-install-and-update-cuda" aria-label="How to install and update cuda?">How to install and update cuda?</a></li>
                 <li>
-                    <a href="#improve-your-efficiency-of-llm" aria-label="improve your efficiency of llm">improve your efficiency of llm</a>
+                    <a href="#improve-your-efficiency-of-llm" aria-label="improve your efficiency of llm">improve your efficiency of llm</a></li>
+                <li>
+                    <a href="#what-should-we-do-if-the-version-of-cuda-is-not-match-with-my-torch" aria-label="What should we do if the version of cuda is not match with my torch?">What should we do if the version of cuda is not match with my torch?</a>
                 </li>
             </ul>
         </div>
@@ -251,9 +253,9 @@
 
   <div class="post-content"><p>Large Language Models (LLMs) have show great promise in various artificial intelligence applications. It is becoming a trend to train a Large Language Model. Nevertheless even for many senior AI engineers, training these complex models remain a significant challenge. Here lists a series of issues you may encounter in the future.</p>
 <h4 id="torchdistributedbarrier-stuck-during-training-with-multi-gpus">torch.distributed.barrier() stuck during training with multi gpus<a hidden class="anchor" aria-hidden="true" href="#torchdistributedbarrier-stuck-during-training-with-multi-gpus">#</a></h4>
-<p>At first, you should try to set the environment variable NCCL_P2P_DISABLE=1. If it works out, the solution is probably to disable ACS of Pcie in BIOS. You may need to reference to the <a href="https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/troubleshooting.html#gpu-to-gpu-communication">link</a>.</p>
+<p>At first, you should try to set the environment variable &lsquo;NCCL_P2P_DISABLE=1&rsquo;. If it works out, the solution is probably to disable ACS of Pcie in BIOS. You may need to reference to the <a href="https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/troubleshooting.html#gpu-to-gpu-communication">link</a>.</p>
 <h4 id="raise-runtimeerrorninja-is-required-to-load-c-extensions">raise RuntimeError(&ldquo;Ninja is required to load C++ extensions&rdquo;)<a hidden class="anchor" aria-hidden="true" href="#raise-runtimeerrorninja-is-required-to-load-c-extensions">#</a></h4>
-<p>You need to make sure Ninja compile system is installed.</p>
+<p>You need to make sure Ninja compile system has been installed.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo apt install ninja-build
 </span></span></code></pre></div><h4 id="subprocesscalledprocesserror-command-which-c-required-no-zero-exit-status-1">subprocess.Called.ProcessError: Command &lsquo;[&lsquo;which&rsquo;, &lsquo;c++&rsquo;]&rsquo; required no-zero exit status 1.<a hidden class="anchor" aria-hidden="true" href="#subprocesscalledprocesserror-command-which-c-required-no-zero-exit-status-1">#</a></h4>
 <p>This error means each node has to install c++ compiler. So just check if it has been installed on every machine.</p>
@@ -264,8 +266,11 @@
 <h4 id="how-to-install-and-update-cuda">How to install and update cuda?<a hidden class="anchor" aria-hidden="true" href="#how-to-install-and-update-cuda">#</a></h4>
 <p>Reference to <a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html">this</a>.</p>
 <h4 id="improve-your-efficiency-of-llm">improve your efficiency of llm<a hidden class="anchor" aria-hidden="true" href="#improve-your-efficiency-of-llm">#</a></h4>
-<p>resize your vocabulary equivalent to multiple of 8.</p>
-
+<p>resize your vocabulary equivalent to multiple of 8</p>
+<h4 id="what-should-we-do-if-the-version-of-cuda-is-not-match-with-my-torch">What should we do if the version of cuda is not match with my torch?<a hidden class="anchor" aria-hidden="true" href="#what-should-we-do-if-the-version-of-cuda-is-not-match-with-my-torch">#</a></h4>
+<p>The best solution is that install different version of cuda first, and switch on your demand. How to do it? Just run this command and select your desired item.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">update-alternatives --config cuda
+</span></span></code></pre></div>
 
   </div>
 

@@ -120,8 +120,8 @@
   "keywords": [
     "pretraining", "continuous pretraining"
   ],
-  "articleBody": "Large language models (LLMs) have already demonstrated significant achievements, many startups make a plan to train their own LLMs. However, training a LLM from scratch remains a big challenge, both in terms of machine costs and the difficulty of data collection. Under this background, continuous pretraining based on some open source LLMs is a considerable alternative.\nDetermine your purpose of your continuous pretraining LLM. In common, standard LLMs may not excel in specific domains like financial, law, or trade. And in these areas, the demands for LLMs are stringent. Given this, consistently training our own LLM is an advantageous decision. The three followings are what we’ve got to explore : 1) Is domain-adaptive continual pretraining helpful? 2) How can we adopt data selection strategy? 3) Whether the original capabilities are retained?\nData selection Data is the most essential component during continuous pretraining. How do we select and combine various datasets? In important resampling (Xie et al1), the researchers introduce an approach known as Data Selection with Important Resampling (DSIR). The method utilizes raw and target data in an n-gram feature space to estimate important weights.\nFigure 1. For a raw dataset like The Pile, using an estimator to obtain importance weights, and then select data via the importance weights. (Image source: Data Selection for Language Models via Importance Resampling)\nTraining strategy Learning rate setting In general, we tend to use warming up strategy to finetune downstream models. But some researchers (Gupta et al.2) have drawn a series of interesting conclusions on warming up.\nDon’t use maximum learning rate initially to avoid an initial large spike in the loss which leads to no consequence later. A smaller learning rate may preserve more performance on the upstream dataset. Continual pretraining with the latest pretrained checkpoint improves performance. Rewarming is not a good option when the downstream dataset is similar to the upstream dataset. For the same dataset, constant learning rate achieves the best performance. Although constant learning rate can give you a good initialization, rewarming will get better while training long enough. catastrophic forgetting (Li et al.3) finds continual pretraining may cause repetition issues.\nFigure 2. After continual training with traditional chinese dataset, the model starts to repeat a sentence. (Image source: Examining Forgetting in Continual Pre-training of Aligned Large Language Models)\nEvaluation What we commonly know about continual pretraining is catastrophic forgetting. Some standard solutions involve little more than mixing common data or retaining some gradient information like EWA.\nXie et al., Data Selection for Language Models via Importance Resampling, NIPS 2023 ↩︎\nGupta et al., Continual Pre-Training of Large Language Models: How to (re)warm your model?, 2023 ↩︎\nLi et al., Examining Forgetting in Continual Pre-training of Aligned Large Language Models, 2024 ↩︎\n",
-  "wordCount" : "450",
+  "articleBody": "Large language models (LLMs) have already demonstrated significant achievements, many startups make a plan to train their own LLMs. However, training a LLM from scratch remains a big challenge, both in terms of machine costs and the difficulty of data collection. Under this background, continuous pretraining based on some open source LLMs is a considerable alternative.\nDetermine your purpose of your continuous pretraining LLM. In common, standard LLMs may not excel in specific domains like financial, law, or trade. And in these areas, the demands for LLMs are stringent. Given this, consistently training our own LLM is an advantageous decision. The three followings are what we’ve got to explore : 1) Is domain-adaptive continual pretraining helpful? 2) How can we adopt data selection strategy? 3) Whether the original capabilities are retained?\nData selection Data is the most essential component during continuous pretraining. How do we select and combine various datasets? In important resampling (Xie et al1), the researchers introduce an approach known as Data Selection with Important Resampling (DSIR). The method utilizes raw and target data in an n-gram feature space to estimate important weights.\nFigure 1. For a raw dataset like The Pile, using an estimator to obtain importance weights, and then select data via the importance weights. (Image source: Data Selection for Language Models via Importance Resampling)\nTraining strategy Learning rate setting In general, we tend to use warming up strategy to finetune downstream models. But some researchers (Gupta et al.2) have drawn a series of interesting conclusions on warming up.\nDon’t use maximum learning rate initially to avoid an initial large spike in the loss which leads to no consequence later. A smaller learning rate may preserve more performance on the upstream dataset. Continual pretraining with the latest pretrained checkpoint improves performance. Rewarming is not a good option when the downstream dataset is similar to the upstream dataset. For the same dataset, constant learning rate achieves the best performance. Although constant learning rate can give you a good initialization, rewarming will get better while training long enough. catastrophic forgetting What we commonly know about continual pretraining is catastrophic forgetting. Some standard solutions involve little more than mixing common data or retaining some gradient information like EWA.\n(Li et al.3) finds continual pretraining may cause repetition issues.\nFigure 2. After continual training with traditional chinese dataset, the model starts to repeat a sentence. (Image source: Examining Forgetting in Continual Pre-training of Aligned Large Language Models)\nEvaluation tools The lm-eval python package released by EleutherAI which aims to offer a opensource framework in LLM evaluation for AI researchers. To install it, simply run a command:\npip install lm-eval Here is an interesting blog providing a tutorial for beginners.\nXie et al., Data Selection for Language Models via Importance Resampling, NIPS 2023 ↩︎\nGupta et al., Continual Pre-Training of Large Language Models: How to (re)warm your model?, 2023 ↩︎\nLi et al., Examining Forgetting in Continual Pre-training of Aligned Large Language Models, 2024 ↩︎\n",
+  "wordCount" : "491",
   "inLanguage": "en",
   "datePublished": "2023-12-29T00:00:00Z",
   "dateModified": "2023-12-29T00:00:00Z",
@@ -242,8 +242,13 @@
                     <a href="#catastrophic-forgetting" aria-label="catastrophic forgetting">catastrophic forgetting</a></li></ul>
                 </li>
                 <li>
-                    <a href="#evaluation" aria-label="Evaluation">Evaluation</a>
+                    <a href="#evaluation" aria-label="Evaluation">Evaluation</a><ul>
+                        
+                <li>
+                    <a href="#tools" aria-label="tools">tools</a>
                 </li>
+            </ul>
+            </li>
             </ul>
         </div>
     </details>
@@ -273,17 +278,20 @@
 <li>Although constant learning rate can give you a good initialization, rewarming will get better while training long enough.</li>
 </ol>
 <h4 id="catastrophic-forgetting">catastrophic forgetting<a hidden class="anchor" aria-hidden="true" href="#catastrophic-forgetting">#</a></h4>
-<p>(<a href="https://arxiv.org/abs/2401.03129">Li et al.</a><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>) finds continual pretraining may cause repetition issues.</p>
+<p>What we commonly know about continual pretraining is catastrophic forgetting.  Some standard solutions involve little more than mixing common data or retaining some gradient information like EWA.<br>
+(<a href="https://arxiv.org/abs/2401.03129">Li et al.</a><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>) finds continual pretraining may cause repetition issues.</p>
 <figure>
-    <img loading="lazy" src="images/catastrophic-exp1.png"
+    <img loading="lazy" src="images/catastrophic-forgetting-exp1.png"
          alt="Figure 2. After continual training with traditional chinese dataset, the model starts to repeat a sentence. (Image source: Examining Forgetting in Continual Pre-training of Aligned Large Language Models)"/> <figcaption>
             <p>Figure 2. After continual training with traditional chinese dataset, the model starts to repeat a sentence. (Image source: <a href="https://arxiv.org/abs/2401.03129">Examining Forgetting in Continual Pre-training of Aligned Large Language Models</a>)</p>
         </figcaption>
 </figure>
 
 <h3 id="evaluation">Evaluation<a hidden class="anchor" aria-hidden="true" href="#evaluation">#</a></h3>
-<p>What we commonly know about continual pretraining is catastrophic forgetting.  Some standard solutions involve little more than mixing common data or retaining some gradient information like EWA.</p>
-<h3 id="heading"><a hidden class="anchor" aria-hidden="true" href="#heading">#</a></h3>
+<h4 id="tools">tools<a hidden class="anchor" aria-hidden="true" href="#tools">#</a></h4>
+<p>The lm-eval python package released by <a href="https://www.eleuther.ai/">EleutherAI</a> which aims to offer a opensource framework in LLM evaluation for AI researchers. To install it, simply run a command:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install lm-eval
+</span></span></code></pre></div><p><a href="https://wandb.ai/wandb_gen/llm-evaluation/reports/Evaluating-Large-Language-Models-LLMs-with-Eleuther-AI--VmlldzoyOTI0MDQ3#what-is-lm-eval?">Here</a> is an interesting blog providing a tutorial for beginners.</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
