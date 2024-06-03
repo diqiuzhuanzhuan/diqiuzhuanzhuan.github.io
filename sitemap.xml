@@ -26,10 +26,19 @@
     <loc>https://diqiuzhuanzhuan.github.io/tags/</loc>
     <lastmod>2024-02-23T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://diqiuzhuanzhuan.github.io/tags/agent/</loc>
+    <lastmod>2024-01-23T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://diqiuzhuanzhuan.github.io/posts/align-llms/</loc>
     <lastmod>2024-01-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://diqiuzhuanzhuan.github.io/tags/continuous-pretraining/</loc>
+    <lastmod>2024-01-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://diqiuzhuanzhuan.github.io/posts/llm-agent/</loc>
+    <lastmod>2024-01-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://diqiuzhuanzhuan.github.io/tags/llm-application/</loc>
     <lastmod>2024-01-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://diqiuzhuanzhuan.github.io/tags/pretraining/</loc>
@@ -105,5 +114,9 @@
     <loc>https://diqiuzhuanzhuan.github.io/search.fr/</loc>
   </url><url>
     <loc>https://diqiuzhuanzhuan.github.io/tags/stable-diffusion/</loc>
+  </url><url>
+    <loc>https://diqiuzhuanzhuan.github.io/tags/visual-language-model/</loc>
+  </url><url>
+    <loc>https://diqiuzhuanzhuan.github.io/posts/visual-language-model/</loc>
   </url>
 </urlset>

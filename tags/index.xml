@@ -28,10 +28,24 @@
       <description></description>
     </item>
     <item>
+      <title>Agent</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/agent/</link>
+      <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/agent/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>continuous pretraining</title>
       <link>https://diqiuzhuanzhuan.github.io/tags/continuous-pretraining/</link>
       <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
       <guid>https://diqiuzhuanzhuan.github.io/tags/continuous-pretraining/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LLM Application</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/llm-application/</link>
+      <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/llm-application/</guid>
       <description></description>
     </item>
     <item>
@@ -123,6 +137,13 @@
       <link>https://diqiuzhuanzhuan.github.io/tags/stable-diffusion/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://diqiuzhuanzhuan.github.io/tags/stable-diffusion/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>visual language model</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/visual-language-model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/visual-language-model/</guid>
       <description></description>
     </item>
   </channel>
