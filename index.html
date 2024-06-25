@@ -210,10 +210,23 @@
     </h2>
   </header>
   <div class="entry-content">
-    <p>Hallucination </p>
+    <p>After pre-training with a large scale of dataset and supervised fine-tuning with a collection of instruct dataset, a LLM obtains remarkable capabality of generating tokens. Nevertheless, LLM only generates some of sequences that seems like reasonable. No grammar errors, no tendious words, but it’s not truthful. Are there any methods that can eliminate these drawbacks? the scientists from OpenAI define these issuse as LLM alignment. the most approach is RLHF....</p>
   </div>
   <footer class="entry-footer"><span title='2024-01-23 00:00:00 +0000 UTC'>January 23, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Loong</footer>
   <a class="entry-link" aria-label="post link to Align LLMs" href="https://diqiuzhuanzhuan.github.io/posts/align-llms/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Audio LLMs
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>audioLM Based on SoundStream1 and w2v-BERT2, audioLM3 proposes a framework which consist of three components: tokenizer model, decoder-only Transformer language model, detokenizer model. SoundStream, is neural audio codec with strong performance, which converts input waveforms at 16 kHZ into embeddings while w2v-BERT plays the role to compute semantic tokens. Figure 1. (Image source: AudioLM: a Language Modeling Approach to Audio Generation)
+Figure 2. The three stages of the hierarchical modeling of semantic and acoustic tokens in AudioLM: i) semantic modeling for long-term structural coherence, ii) coarse acoustic modeling conditioned on the semantic tokens and iii) fine acoustic modeling....</p>
+  </div>
+  <footer class="entry-footer"><span title='2024-01-23 00:00:00 +0000 UTC'>January 23, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Loong</footer>
+  <a class="entry-link" aria-label="post link to Audio LLMs" href="https://diqiuzhuanzhuan.github.io/posts/audio-llms/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -234,7 +247,8 @@
     </h2>
   </header>
   <div class="entry-content">
-    <p>Chinese Dataset English Dataset fineweb: 15 trillion tokens of high quality web data. Thanks to the team from huggingface. They filtered and deduplicated all CommonCrawl between 2013 and 2024. Models trained on FineWeb outperform RefinedWeb, C4, DolmaV1.6, The Pile and SlimPajama. fineweb-edu: curating through many methods from fineweb . Details you may want to know about are here: fineweb data processing technique report.</p>
+    <p>Chinese Dataset English Dataset fineweb: 15 trillion tokens of high quality web data. Thanks to the team from huggingface. They filtered and deduplicated all CommonCrawl between 2013 and 2024. Models trained on FineWeb outperform RefinedWeb, C4, DolmaV1.6, The Pile and SlimPajama. fineweb-edu: curating through many methods from fineweb . Details you must want to know about are here: fineweb data processing technique report.
+clean dataset Huggingface introduces a python library datatrove to process, filter and deduplicate text data at a very large scale....</p>
   </div>
   <footer class="entry-footer"><span title='2024-01-04 00:00:00 +0000 UTC'>January 4, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Loong</footer>
   <a class="entry-link" aria-label="post link to Data for LLMs" href="https://diqiuzhuanzhuan.github.io/posts/data-manager-for-llms/"></a>

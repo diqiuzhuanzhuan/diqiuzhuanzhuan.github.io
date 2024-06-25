@@ -28,6 +28,13 @@
       <description>A series of papers about Aligning LLMs.</description>
     </item>
     <item>
+      <title>Audio LLMs</title>
+      <link>https://diqiuzhuanzhuan.github.io/posts/audio-llms/</link>
+      <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/posts/audio-llms/</guid>
+      <description>A series of papers about audio LLMs.</description>
+    </item>
+    <item>
       <title>LLM Agent</title>
       <link>https://diqiuzhuanzhuan.github.io/posts/llm-agent/</link>
       <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>

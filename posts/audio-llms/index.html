@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Continual Pretraining | Loong&#39;s Lens</title>
-<meta name="keywords" content="pretraining, continuous pretraining">
-<meta name="description" content="A series of papers about Continuous Pretraining.">
+<title>Audio LLMs | Loong&#39;s Lens</title>
+<meta name="keywords" content="TTS, audio LLM">
+<meta name="description" content="A series of papers about audio LLMs.">
 <meta name="author" content="Loong">
-<link rel="canonical" href="https://diqiuzhuanzhuan.github.io/posts/continuous-pretraining/">
+<link rel="canonical" href="https://diqiuzhuanzhuan.github.io/posts/audio-llms/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.755375f2d2f5befc89390aa1da6369388945ce457429a284ad9ed354197440d0.css" integrity="sha256-dVN18tL1vvyJOQqh2mNpOIlFzkV0KaKErZ7TVBl0QNA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://diqiuzhuanzhuan.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://diqiuzhuanzhuan.github.io/favicon-16x16.png">
@@ -75,19 +75,19 @@
     });
 </script>
 
-<meta property="og:title" content="Continual Pretraining" />
-<meta property="og:description" content="A series of papers about Continuous Pretraining." />
+<meta property="og:title" content="Audio LLMs" />
+<meta property="og:description" content="A series of papers about audio LLMs." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://diqiuzhuanzhuan.github.io/posts/continuous-pretraining/" /><meta property="og:image" content="https://diqiuzhuanzhuan.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-12-29T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-12-29T00:00:00+00:00" />
+<meta property="og:url" content="https://diqiuzhuanzhuan.github.io/posts/audio-llms/" /><meta property="og:image" content="https://diqiuzhuanzhuan.github.io/images/papermod-cover.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2024-01-23T00:00:00+00:00" />
 
 
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://diqiuzhuanzhuan.github.io/images/papermod-cover.png"/>
 
-<meta name="twitter:title" content="Continual Pretraining"/>
-<meta name="twitter:description" content="A series of papers about Continuous Pretraining."/>
+<meta name="twitter:title" content="Audio LLMs"/>
+<meta name="twitter:description" content="A series of papers about audio LLMs."/>
 
 
 <script type="application/ld+json">
@@ -104,8 +104,8 @@
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Continual Pretraining",
-      "item": "https://diqiuzhuanzhuan.github.io/posts/continuous-pretraining/"
+      "name": "Audio LLMs",
+      "item": "https://diqiuzhuanzhuan.github.io/posts/audio-llms/"
     }
   ]
 }
@@ -114,24 +114,24 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Continual Pretraining",
-  "name": "Continual Pretraining",
-  "description": "A series of papers about Continuous Pretraining.",
+  "headline": "Audio LLMs",
+  "name": "Audio LLMs",
+  "description": "A series of papers about audio LLMs.",
   "keywords": [
-    "pretraining", "continuous pretraining"
+    "TTS", "audio LLM"
   ],
-  "articleBody": "Large language models (LLMs) have already demonstrated significant achievements, many startups make a plan to train their own LLMs. However, training a LLM from scratch remains a big challenge, both in terms of machine costs and the difficulty of data collection. Under this background, continuous pretraining based on some open source LLMs is a considerable alternative.\nDetermine your purpose of your continuous pretraining LLM. In common, standard LLMs may not excel in specific domains like financial, law, or trade. And in these areas, the demands for LLMs are stringent. Given this, consistently training our own LLM is an advantageous decision. The three followings are what we’ve got to explore : 1) Is domain-adaptive continual pretraining helpful? 2) How can we adopt data selection strategy? 3) Whether the original capabilities are retained?\nData selection Data is the most essential component during continuous pretraining. Figure 1. All the metrics keep in line with data. The more the better. (Image source: 1st Multilingual Model Workshop - Continued Pre-training of LLMs​)\nHow do we select and combine various datasets? In important resampling (Xie et al1), the researchers introduce an approach known as Data Selection with Important Resampling (DSIR). The method utilizes raw and target data in an n-gram feature space to estimate important weights.\nFigure 1. For a raw dataset like The Pile, using an estimator to obtain importance weights, and then select data via the importance weights. (Image source: Data Selection for Language Models via Importance Resampling)\nTraining strategy Learning rate setting In general, we tend to use warming up strategy to fine-tune downstream models. But some researchers (Gupta et al.2) have drawn a series of interesting conclusions on warming up.\nDon’t use a maximum learning rate initially to avoid an initial large spike in the loss which leads to no consequence later. A smaller learning rate may preserve more performance on the upstream dataset. Continual pretraining with the latest pretrained checkpoint improves performance. Rewarming is not a good option when the downstream dataset is similar to the upstream dataset. For the same dataset, a constant learning rate achieves the best performance. Although a constant learning rate can give you a good initialization, rewarming will get better while training long enough. Catastrophic Forgetting What we commonly know about continual pretraining is catastrophic forgetting. Some standard solutions involve little more than mixing common data or retaining some gradient information, like EWA.\n(Li et al.3) finds continual pretraining may cause repetition issues.\nFigure 2. After continual training with the traditional Chinese dataset, the model starts to repeat a sentence. (Image source: Examining Forgetting in Continual Pre-training of Aligned Large Language Models)\nEvaluation tools lm-eval The lm-eval python package released by EleutherAI which aims to offer an open source framework in LLM evaluation for AI researchers. To install it, simply run a command:\npip install lm-eval Here is an interesting blog providing a tutorial for beginners.\nopencompass opencompass is a one-stop platform for large language model (LLM) evaluation.\nXie et al., Data Selection for Language Models via Importance Resampling, NIPS 2023 ↩︎\nGupta et al., Continual Pre-Training of Large Language Models: How to (re)warm your model?, 2023 ↩︎\nLi et al., Examining Forgetting in Continual Pre-training of Aligned Large Language Models, 2024 ↩︎\n",
-  "wordCount" : "534",
+  "articleBody": "audioLM Based on SoundStream1 and w2v-BERT2, audioLM3 proposes a framework which consist of three components: tokenizer model, decoder-only Transformer language model, detokenizer model. SoundStream, is neural audio codec with strong performance, which converts input waveforms at 16 kHZ into embeddings while w2v-BERT plays the role to compute semantic tokens. Figure 1. (Image source: AudioLM: a Language Modeling Approach to Audio Generation)\nFigure 2. The three stages of the hierarchical modeling of semantic and acoustic tokens in AudioLM: i) semantic modeling for long-term structural coherence, ii) coarse acoustic modeling conditioned on the semantic tokens and iii) fine acoustic modeling. With the default configuration, for every semantic token there are 2Q′ acoustic tokens in the second stage and 2(Q − Q′) tokens in the third stage. The factor of 2 comes from the fact that the sampling rate of SoundStream embeddings is twice as that of the w2v-BERT embeddings. (Image source: AudioLM: a Language Modeling Approach to Audio Generation)\nAudioLM is a pioneering framework that enables the generation of audio with a long-term coherent structure. It uniquely combines adversarial neural audio compression, self-supervised representation learning, and advanced language modeling techniques.\nZeghidour et al., SoundStream: An End-to-End Neural Audio Codec, 2021 ↩︎\nChung et al., W2v-BERT: Combining Contrastive Learning and Masked Language Modeling for Self-Supervised Speech Pre-Training, 2021 ↩︎\nBorsos et al., AudioLM: a Language Modeling Approach to Audio Generation, 2022 ↩︎\n",
+  "wordCount" : "226",
   "inLanguage": "en",
-  "datePublished": "2023-12-29T00:00:00Z",
-  "dateModified": "2023-12-29T00:00:00Z",
+  "datePublished": "2024-01-23T00:00:00Z",
+  "dateModified": "2024-01-23T00:00:00Z",
   "author":[{
     "@type": "Person",
     "name": "Loong"
   }],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://diqiuzhuanzhuan.github.io/posts/continuous-pretraining/"
+    "@id": "https://diqiuzhuanzhuan.github.io/posts/audio-llms/"
   },
   "publisher": {
     "@type": "Organization",
@@ -214,12 +214,12 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://diqiuzhuanzhuan.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://diqiuzhuanzhuan.github.io/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
-      Continual Pretraining
+      Audio LLMs
     </h1>
     <div class="post-description">
-      A series of papers about Continuous Pretraining.
+      A series of papers about audio LLMs.
     </div>
-    <div class="post-meta"><span title='2023-12-29 00:00:00 +0000 UTC'>December 29, 2023</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Loong
+    <div class="post-meta"><span title='2024-01-23 00:00:00 +0000 UTC'>January 23, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Loong
 
 </div>
   </header> <div class="toc">
@@ -230,98 +230,42 @@
 
         <div class="inner"><ul>
                 <li>
-                    <a href="#determine-your-purpose-of-your-continuous-pretraining-llm" aria-label="Determine your purpose of your continuous pretraining LLM.">Determine your purpose of your continuous pretraining LLM.</a></li>
-                <li>
-                    <a href="#data-selection" aria-label="Data selection">Data selection</a></li>
-                <li>
-                    <a href="#training-strategy" aria-label="Training strategy">Training strategy</a><ul>
-                        
-                <li>
-                    <a href="#learning-rate-setting" aria-label="Learning rate setting">Learning rate setting</a></li>
-                <li>
-                    <a href="#catastrophic-forgetting" aria-label="Catastrophic Forgetting">Catastrophic Forgetting</a></li></ul>
+                    <a href="#audiolm" aria-label="audioLM">audioLM</a>
                 </li>
-                <li>
-                    <a href="#evaluation" aria-label="Evaluation">Evaluation</a><ul>
-                        
-                <li>
-                    <a href="#tools" aria-label="tools">tools</a><ul>
-                        
-                <li>
-                    <a href="#lm-eval" aria-label="lm-eval">lm-eval</a></li>
-                <li>
-                    <a href="#opencompass" aria-label="opencompass">opencompass</a>
-                </li>
-            </ul>
-            </li>
-            </ul>
-            </li>
             </ul>
         </div>
     </details>
 </div>
 
-  <div class="post-content"><p>Large language models (LLMs) have already demonstrated significant achievements, many startups make a plan to train their own LLMs. However, training a LLM from scratch remains a big challenge, both in terms of machine costs and the difficulty of data collection. Under this background, continuous pretraining based on some open source LLMs is a considerable alternative.</p>
-<h3 id="determine-your-purpose-of-your-continuous-pretraining-llm">Determine your purpose of your continuous pretraining LLM.<a hidden class="anchor" aria-hidden="true" href="#determine-your-purpose-of-your-continuous-pretraining-llm">#</a></h3>
-<p>In common, standard LLMs may not excel in specific domains like financial, law, or trade. And in these areas, the demands for LLMs are stringent. Given this, consistently training our own LLM is an advantageous decision. The three followings are what we&rsquo;ve got to explore : 1) Is domain-adaptive continual pretraining helpful? 2) How can we adopt data selection strategy? 3) Whether the original capabilities are retained?</p>
-<h3 id="data-selection">Data selection<a hidden class="anchor" aria-hidden="true" href="#data-selection">#</a></h3>
-<p>Data is the most essential component during continuous pretraining.
+  <div class="post-content"><h3 id="audiolm">audioLM<a hidden class="anchor" aria-hidden="true" href="#audiolm">#</a></h3>
+<p>Based on SoundStream<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> and w2v-BERT<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, audioLM<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> proposes a framework which consist of three components: tokenizer model, decoder-only Transformer language model, detokenizer model.
+SoundStream, is  neural audio codec with strong performance, which converts input waveforms at 16 kHZ into embeddings while w2v-BERT plays the role to compute semantic tokens.
 <figure>
-    <img loading="lazy" src="images/DATA-EXP1.png"
-         alt="Figure 1. All the metrics keep in line with data. The more the better. (Image source: 1st Multilingual Model Workshop - Continued Pre-training of LLMs​)"/> <figcaption>
-            <p>Figure 1. All the metrics keep in line with data. The more the better. (Image source: <a href="https://www.youtube.com/watch?v=xMwKqbY0dWU&amp;ab_channel=CerebrasSystems">1st Multilingual Model Workshop - Continued Pre-training of LLMs​</a>)</p>
+    <img loading="lazy" src="images/audiolm-exp1.png"
+         alt="Figure 1. (Image source: AudioLM: a Language Modeling Approach to Audio Generation)"/> <figcaption>
+            <p>Figure 1. (Image source: <a href="https://arxiv.org/abs/2209.03143">AudioLM: a Language Modeling Approach to Audio Generation</a>)</p>
         </figcaption>
 </figure>
 </p>
-<p>How do we select and combine various datasets? In important resampling (<a href="https://arxiv.org/abs/2302.03169">Xie et al</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>), the researchers introduce an approach known as Data Selection with Important Resampling (DSIR). The method utilizes raw and target data in an n-gram feature space to estimate important weights.</p>
 <figure>
-    <img loading="lazy" src="images/important-resampling-exp1.png"
-         alt="Figure 1. For a raw dataset like The Pile, using an estimator to obtain importance weights, and then select data via the importance weights. (Image source: Data Selection for Language Models via Importance Resampling)"/> <figcaption>
-            <p>Figure 1. For a raw dataset like The Pile, using an estimator to obtain importance weights, and then select data via the importance weights. (Image source: <a href="https://arxiv.org/abs/2302.03169">Data Selection for Language Models via Importance Resampling</a>)</p>
+    <img loading="lazy" src="images/audiollm-exp2.png"
+         alt="Figure 2. The three stages of the hierarchical modeling of semantic and acoustic tokens in AudioLM: i) semantic modeling for long-term structural coherence, ii) coarse acoustic modeling conditioned on the semantic tokens and iii) fine acoustic modeling. With the default configuration, for every semantic token there are 2Q′ acoustic tokens in the second stage and 2(Q − Q′) tokens in the third stage. The factor of 2 comes from the fact that the sampling rate of SoundStream embeddings is twice as that of the w2v-BERT embeddings. (Image source: AudioLM: a Language Modeling Approach to Audio Generation)"/> <figcaption>
+            <p>Figure 2. The three stages of the hierarchical modeling of semantic and acoustic tokens in AudioLM: i) semantic modeling for long-term structural coherence, ii) coarse acoustic modeling conditioned on the semantic tokens and iii) fine acoustic modeling. With the default configuration, for every semantic token there are 2Q′ acoustic tokens in the second stage and 2(Q − Q′) tokens in the third stage. The factor of 2 comes from the fact that the sampling rate of SoundStream embeddings is twice as that of the w2v-BERT embeddings. (Image source: <a href="https://arxiv.org/abs/2209.03143">AudioLM: a Language Modeling Approach to Audio Generation</a>)</p>
         </figcaption>
 </figure>
 
-<h3 id="training-strategy">Training strategy<a hidden class="anchor" aria-hidden="true" href="#training-strategy">#</a></h3>
-<h4 id="learning-rate-setting">Learning rate setting<a hidden class="anchor" aria-hidden="true" href="#learning-rate-setting">#</a></h4>
-<p>In general, we tend to use warming up strategy to fine-tune downstream models. But some researchers (<a href="https://arxiv.org/abs/2308.04014">Gupta et al.</a><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>) have drawn a series of interesting conclusions on warming up.</p>
-<ol>
-<li>Don&rsquo;t use a maximum learning rate initially to avoid an initial large spike in the loss which leads to no consequence later.</li>
-<li>A smaller learning rate may preserve more performance on the upstream dataset.</li>
-<li>Continual pretraining with the latest pretrained checkpoint improves performance.</li>
-<li>Rewarming is not a good option when the downstream dataset is similar to the upstream dataset.</li>
-<li>For the same dataset, a constant learning rate achieves the best performance.</li>
-<li>Although a constant learning rate can give you a good initialization, rewarming will get better while training long enough.</li>
-</ol>
-<h4 id="catastrophic-forgetting">Catastrophic Forgetting<a hidden class="anchor" aria-hidden="true" href="#catastrophic-forgetting">#</a></h4>
-<p>What we commonly know about continual pretraining is catastrophic forgetting.  Some standard solutions involve little more than mixing common data or retaining some gradient information, like EWA.<br>
-(<a href="https://arxiv.org/abs/2401.03129">Li et al.</a><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>) finds continual pretraining may cause repetition issues.</p>
-<figure>
-    <img loading="lazy" src="images/catastrophic-forgetting-exp1.png"
-         alt="Figure 2. After continual training with the traditional Chinese dataset, the model starts to repeat a sentence. (Image source: Examining Forgetting in Continual Pre-training of Aligned Large Language Models)"/> <figcaption>
-            <p>Figure 2. After continual training with the traditional Chinese dataset, the model starts to repeat a sentence. (Image source: <a href="https://arxiv.org/abs/2401.03129">Examining Forgetting in Continual Pre-training of Aligned Large Language Models</a>)</p>
-        </figcaption>
-</figure>
-
-<h3 id="evaluation">Evaluation<a hidden class="anchor" aria-hidden="true" href="#evaluation">#</a></h3>
-<h4 id="tools">tools<a hidden class="anchor" aria-hidden="true" href="#tools">#</a></h4>
-<h5 id="lm-eval">lm-eval<a hidden class="anchor" aria-hidden="true" href="#lm-eval">#</a></h5>
-<p>The lm-eval python package released by <a href="https://www.eleuther.ai/">EleutherAI</a> which aims to offer an open source framework in LLM evaluation for AI researchers. To install it, simply run a command:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">pip install lm-eval
-</span></span></code></pre></div><p><a href="https://wandb.ai/wandb_gen/llm-evaluation/reports/Evaluating-Large-Language-Models-LLMs-with-Eleuther-AI--VmlldzoyOTI0MDQ3#what-is-lm-eval?">Here</a> is an interesting blog providing a tutorial for beginners.</p>
-<h5 id="opencompass">opencompass<a hidden class="anchor" aria-hidden="true" href="#opencompass">#</a></h5>
-<p><a href="https://github.com/open-compass/opencompass">opencompass</a> is a one-stop platform for large language model (LLM) evaluation.</p>
-<h3 id="heading"><a hidden class="anchor" aria-hidden="true" href="#heading">#</a></h3>
+<p>AudioLM is a pioneering framework that enables the generation of audio with a long-term coherent structure. It uniquely combines adversarial neural audio compression, self-supervised representation learning, and advanced language modeling techniques.</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1">
-<p>Xie et al., <a href="https://arxiv.org/abs/2302.03169">Data Selection for Language Models via Importance Resampling</a>, NIPS 2023&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Zeghidour et al.,  <a href="https://arxiv.org/abs/2107.03312">SoundStream: An End-to-End Neural Audio Codec</a>, 2021&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2">
-<p>Gupta et al., <a href="https://arxiv.org/abs/2308.04014">Continual Pre-Training of Large Language Models: How to (re)warm your model?</a>, 2023&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Chung et al., <a href="https://arxiv.org/abs/2108.06209">W2v-BERT: Combining Contrastive Learning and Masked Language Modeling for Self-Supervised Speech Pre-Training</a>, 2021&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3">
-<p>Li et al.,  <a href="https://arxiv.org/abs/2401.03129">Examining Forgetting in Continual Pre-training of Aligned Large Language Models</a>, 2024&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Borsos et al.,  <a href="https://arxiv.org/abs/2209.03143">AudioLM: a Language Modeling Approach to Audio Generation</a>, 2022&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
@@ -331,27 +275,27 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://diqiuzhuanzhuan.github.io/tags/pretraining/">pretraining</a></li>
-      <li><a href="https://diqiuzhuanzhuan.github.io/tags/continuous-pretraining/">continuous pretraining</a></li>
+      <li><a href="https://diqiuzhuanzhuan.github.io/tags/tts/">TTS</a></li>
+      <li><a href="https://diqiuzhuanzhuan.github.io/tags/audio-llm/">audio LLM</a></li>
     </ul>
 <nav class="paginav">
-  <a class="prev" href="https://diqiuzhuanzhuan.github.io/posts/data-manager-for-llms/">
+  <a class="prev" href="https://diqiuzhuanzhuan.github.io/posts/align-llms/">
     <span class="title">« Prev</span>
     <br>
-    <span>Data for LLMs</span>
+    <span>Align LLMs</span>
   </a>
-  <a class="next" href="https://diqiuzhuanzhuan.github.io/posts/image-generation/">
+  <a class="next" href="https://diqiuzhuanzhuan.github.io/posts/llm-agent/">
     <span class="title">Next »</span>
     <br>
-    <span>Image Generation</span>
+    <span>LLM Agent</span>
   </a>
 </nav>
 
 
 <ul class="share-buttons">
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Continual Pretraining on x"
-            href="https://x.com/intent/tweet/?text=Continual%20Pretraining&amp;url=https%3a%2f%2fdiqiuzhuanzhuan.github.io%2fposts%2fcontinuous-pretraining%2f&amp;hashtags=pretraining%2ccontinuouspretraining">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Audio LLMs on x"
+            href="https://x.com/intent/tweet/?text=Audio%20LLMs&amp;url=https%3a%2f%2fdiqiuzhuanzhuan.github.io%2fposts%2faudio-llms%2f&amp;hashtags=TTS%2caudioLLM">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
@@ -359,8 +303,8 @@
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Continual Pretraining on linkedin"
-            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fdiqiuzhuanzhuan.github.io%2fposts%2fcontinuous-pretraining%2f&amp;title=Continual%20Pretraining&amp;summary=Continual%20Pretraining&amp;source=https%3a%2f%2fdiqiuzhuanzhuan.github.io%2fposts%2fcontinuous-pretraining%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Audio LLMs on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fdiqiuzhuanzhuan.github.io%2fposts%2faudio-llms%2f&amp;title=Audio%20LLMs&amp;summary=Audio%20LLMs&amp;source=https%3a%2f%2fdiqiuzhuanzhuan.github.io%2fposts%2faudio-llms%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
@@ -368,8 +312,8 @@
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Continual Pretraining on reddit"
-            href="https://reddit.com/submit?url=https%3a%2f%2fdiqiuzhuanzhuan.github.io%2fposts%2fcontinuous-pretraining%2f&title=Continual%20Pretraining">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Audio LLMs on reddit"
+            href="https://reddit.com/submit?url=https%3a%2f%2fdiqiuzhuanzhuan.github.io%2fposts%2faudio-llms%2f&title=Audio%20LLMs">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
@@ -377,8 +321,8 @@
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Continual Pretraining on facebook"
-            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdiqiuzhuanzhuan.github.io%2fposts%2fcontinuous-pretraining%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Audio LLMs on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fdiqiuzhuanzhuan.github.io%2fposts%2faudio-llms%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
@@ -386,8 +330,8 @@
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Continual Pretraining on whatsapp"
-            href="https://api.whatsapp.com/send?text=Continual%20Pretraining%20-%20https%3a%2f%2fdiqiuzhuanzhuan.github.io%2fposts%2fcontinuous-pretraining%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Audio LLMs on whatsapp"
+            href="https://api.whatsapp.com/send?text=Audio%20LLMs%20-%20https%3a%2f%2fdiqiuzhuanzhuan.github.io%2fposts%2faudio-llms%2f">
             <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
@@ -395,8 +339,8 @@
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Continual Pretraining on telegram"
-            href="https://telegram.me/share/url?text=Continual%20Pretraining&amp;url=https%3a%2f%2fdiqiuzhuanzhuan.github.io%2fposts%2fcontinuous-pretraining%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Audio LLMs on telegram"
+            href="https://telegram.me/share/url?text=Audio%20LLMs&amp;url=https%3a%2f%2fdiqiuzhuanzhuan.github.io%2fposts%2faudio-llms%2f">
             <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
                 <path
                     d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
@@ -404,8 +348,8 @@
         </a>
     </li>
     <li>
-        <a target="_blank" rel="noopener noreferrer" aria-label="share Continual Pretraining on ycombinator"
-            href="https://news.ycombinator.com/submitlink?t=Continual%20Pretraining&u=https%3a%2f%2fdiqiuzhuanzhuan.github.io%2fposts%2fcontinuous-pretraining%2f">
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Audio LLMs on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=Audio%20LLMs&u=https%3a%2f%2fdiqiuzhuanzhuan.github.io%2fposts%2faudio-llms%2f">
             <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
                 xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
                 <path
