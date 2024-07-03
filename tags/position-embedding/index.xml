@@ -15,9 +15,9 @@
     <atom:link href="https://diqiuzhuanzhuan.github.io/tags/position-embedding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Positional Encoding in Transformer</title>
-      <link>https://diqiuzhuanzhuan.github.io/posts/position-encoding-in-transformers/position-encoding-in-transformer/</link>
+      <link>https://diqiuzhuanzhuan.github.io/posts/position-encoding-in-transformers/</link>
       <pubDate>Fri, 10 Mar 2023 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/posts/position-encoding-in-transformers/position-encoding-in-transformer/</guid>
+      <guid>https://diqiuzhuanzhuan.github.io/posts/position-encoding-in-transformers/</guid>
       <description>A series of papers about positional encoding.</description>
     </item>
   </channel>
