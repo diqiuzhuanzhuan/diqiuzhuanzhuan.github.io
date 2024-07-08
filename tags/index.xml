@@ -11,8 +11,29 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 23 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Apr 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://diqiuzhuanzhuan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>deploy</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/deploy/</link>
+      <pubDate>Tue, 23 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/deploy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>llms</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/llms/</link>
+      <pubDate>Tue, 23 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/llms/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>serving</title>
+      <link>https://diqiuzhuanzhuan.github.io/tags/serving/</link>
+      <pubDate>Tue, 23 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/tags/serving/</guid>
+      <description></description>
+    </item>
     <item>
       <title>RAG</title>
       <link>https://diqiuzhuanzhuan.github.io/tags/rag/</link>

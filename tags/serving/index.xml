@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Categories on Loong&#39;s Lens</title>
-    <link>https://diqiuzhuanzhuan.github.io/categories/</link>
-    <description>Recent content in Categories on Loong&#39;s Lens</description>
+    <title>serving on Loong&#39;s Lens</title>
+    <link>https://diqiuzhuanzhuan.github.io/tags/serving/</link>
+    <description>Recent content in serving on Loong&#39;s Lens</description>
     <image>
       <title>Loong&#39;s Lens</title>
       <url>https://diqiuzhuanzhuan.github.io/images/papermod-cover.png</url>
@@ -12,13 +12,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 23 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://diqiuzhuanzhuan.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://diqiuzhuanzhuan.github.io/tags/serving/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>LLMs</title>
-      <link>https://diqiuzhuanzhuan.github.io/categories/llms/</link>
+      <title>LLM deploy</title>
+      <link>https://diqiuzhuanzhuan.github.io/posts/llm-deploy/</link>
       <pubDate>Tue, 23 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/categories/llms/</guid>
-      <description></description>
+      <guid>https://diqiuzhuanzhuan.github.io/posts/llm-deploy/</guid>
+      <description>content about serving LLMs.</description>
     </item>
   </channel>
 </rss>
