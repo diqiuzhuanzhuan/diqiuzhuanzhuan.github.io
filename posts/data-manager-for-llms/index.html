@@ -120,8 +120,8 @@
   "keywords": [
     "pretraining", "continuous pretraining", "data"
   ],
-  "articleBody": "Chinese Dataset English Dataset fineweb: 15 trillion tokens of high quality web data. Thanks to the team from huggingface. They filtered and deduplicated all CommonCrawl between 2013 and 2024. Models trained on FineWeb outperform RefinedWeb, C4, DolmaV1.6, The Pile and SlimPajama. fineweb-edu: curating through many methods from fineweb . Details you must want to know about are here: fineweb data processing technique report.\nclean dataset Huggingface introduces a python library datatrove to process, filter and deduplicate text data at a very large scale.\nSynthetic Data Generation Although some LLMs, like LLaMA, Gemma, have opened their weightings, their alignment data remain private, which obstructs the democratization of AI. The researchers find a way, named MAGPIE1, to generating large-scale alignment data. It is the key point that aligned LLMs can generate user query when we input only the left-side templates up to the right position reserved for user messages.\n(Image source: MAGPIE: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing)\nXu et al., MAGPIE: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing, 2024 ↩︎\n",
-  "wordCount" : "177",
+  "articleBody": "Chinese Dataset English Dataset fineweb: 15 trillion tokens of high quality web data. Thanks to the team from huggingface. They filtered and deduplicated all CommonCrawl between 2013 and 2024. Models trained on FineWeb outperform RefinedWeb, C4, DolmaV1.6, The Pile and SlimPajama. fineweb-edu: curating through many methods from fineweb . Details you must want to know about are here: fineweb data processing technique report.\nclean dataset Huggingface introduces a python library datatrove to process, filter and deduplicate text data at a very large scale.\nSynthetic Data Generation Although some LLMs, like LLaMA, Gemma, have opened their weightings, their alignment data remain private, which obstructs the democratization of AI. The researchers find a way, named MAGPIE1, to generating large-scale alignment data. It is the key point that aligned LLMs can generate user query when we input only the left-side templates up to the right position reserved for user messages.\nFigure 1. The process of self-synthesizing instruction data from aligned LLMs (e.g., LLaMA-8B-Instruct) to create a high quality instruction dataset. (Image source: MAGPIE: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing)\nConcretely, the pipeline of MAGPIE is below:\nStep 1: Instruction Gneration: Magpie crafts an input query in the format of the predefined instruction template of the LLM. This query defines only the role of instruction provider (e.g., user), and does not provide any instruction. The auto-regressive LLM has been fine-tuned using instruction data in the format of the predefined instruction template. Thus, the LLM autonomously generates an instruction when the query crafted by Magpie is given as an input. Step 2: Response Generation: Magpie sends the instruction to the LLM to generate the responses. From the results of experiments, after fine-tuning LLaMA-8B-Base, the instruction dataset from MAGPIE outperforms other public datasets. Xu et al., MAGPIE: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing, 2024 ↩︎\n",
+  "wordCount" : "308",
   "inLanguage": "en",
   "datePublished": "2024-01-04T00:00:00Z",
   "dateModified": "2024-01-04T00:00:00Z",
@@ -219,7 +219,7 @@
     <div class="post-description">
       A series of papers about data for training LLMs.
     </div>
-    <div class="post-meta"><span title='2024-01-04 00:00:00 +0000 UTC'>January 4, 2024</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Loong
+    <div class="post-meta"><span title='2024-01-04 00:00:00 +0000 UTC'>January 4, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Loong
 
 </div>
   </header> <div class="toc">
@@ -250,13 +250,19 @@
 <p><a href="https://huggingface.co/">Huggingface</a> introduces a python library <a href="https://github.com/huggingface/datatrove">datatrove</a> to process, filter and deduplicate text data at a very large scale.</p>
 <h3 id="synthetic-data-generation">Synthetic Data Generation<a hidden class="anchor" aria-hidden="true" href="#synthetic-data-generation">#</a></h3>
 <p>Although some LLMs, like LLaMA, Gemma, have opened their weightings, their alignment data remain private, which obstructs the democratization of AI.  The researchers find a way, named MAGPIE<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, to generating large-scale alignment data. It is the key point that aligned LLMs can generate user query when we  input only the left-side templates up to the right position reserved for user messages.</p>
-<figure>
+<p><figure>
     <img loading="lazy" src="images/MAGPIE-exp1.png"
-         alt="(Image source: MAGPIE: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing)"/> <figcaption>
-            <p>(Image source: <a href="https://arxiv.org/pdf/2406.08464">MAGPIE: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing</a>)</p>
+         alt="Figure 1. The process of self-synthesizing instruction data from aligned LLMs (e.g., LLaMA-8B-Instruct) to create a high quality instruction dataset. (Image source: MAGPIE: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing)"/> <figcaption>
+            <p>Figure 1. The process of self-synthesizing instruction data from aligned LLMs (e.g., LLaMA-8B-Instruct) to create a high quality instruction dataset. (Image source: <a href="https://arxiv.org/pdf/2406.08464">MAGPIE: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing</a>)</p>
         </figcaption>
 </figure>
 
+Concretely, the pipeline of MAGPIE is below:</p>
+<ol>
+<li><strong>Step 1: Instruction Gneration</strong>: Magpie crafts an input query in the format of the predefined instruction template of the LLM. This query defines only the role of instruction provider (e.g., user), and does not provide any instruction. The auto-regressive LLM has been fine-tuned using instruction data in the format of the predefined instruction template. Thus, the LLM autonomously generates an instruction when the query crafted by Magpie is given as an input.</li>
+<li><strong>Step 2: Response Generation</strong>: Magpie sends the instruction to the LLM to generate the responses.
+From the results of experiments, after fine-tuning LLaMA-8B-Base, the instruction dataset from MAGPIE outperforms other public datasets.</li>
+</ol>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
