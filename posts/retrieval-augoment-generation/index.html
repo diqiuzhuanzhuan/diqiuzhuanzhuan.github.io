@@ -120,8 +120,8 @@
   "keywords": [
     "RAG", "retrieval augmented generation"
   ],
-  "articleBody": "RankRAG LLMs are not good at reading too much chunked contexts (e.g., top-100) even with the long-context window. RankRAG aims to design an RAG instruction tuning pipeline that uses a single language model to achieve both high-recall context extraction and high-quality content generation. It is the most significant achievement that both context ranking and answer generation are considerated in this framework. Figure 1. The pipeline of RankRAG. (Image source: RankRAG: Unifying Context Ranking with Retrieval-Augmented Generation in LLMs)\nstage I: Supervised Fine-Tuning (SFT) The authors use 128K SFT examples (e.g., OpenAssistant, Dolly, SODA, ELI5, Self-Istruct, Unnatural Instructions) in total, and take the multi-turn conversion format, use the previous turns of conversation between user and assistant as the context, and only compute the loss at the last response from the assistant. stage II: Unified Instruction-Tuning for Ranking and Generation the stage II consists these following parts: SFT data from Stage-I Context-rich QA data Retrieval-augmented QA data Context ranking data Retrieval-augmented ranking data Finally, all the above data will be casted into a standardized QA form ($x$, $c$, $y$), where $x$ is question, $c$ is the corresponding context, and $y$ is the target output answer. Figure 2. The converting form of the standardlized QA form from question, context and answer. (Image source: RankRAG: Unifying Context Ranking with Retrieval-Augmented Generation in LLMs)\n",
-  "wordCount" : "219",
+  "articleBody": "RankRAG LLMs are not good at reading too much chunked contexts (e.g., top-100) even with the long-context window. RankRAG aims to design an RAG instruction tuning pipeline that uses a single language model to achieve both high-recall context extraction and high-quality content generation. It is the most significant achievement that both context ranking and answer generation are considerated in this framework. Figure 1. The pipeline of RankRAG. (Image source: RankRAG: Unifying Context Ranking with Retrieval-Augmented Generation in LLMs)\nstage I: Supervised Fine-Tuning (SFT) The authors use 128K SFT examples (e.g., OpenAssistant, Dolly, SODA, ELI5, Self-Istruct, Unnatural Instructions) in total, and take the multi-turn conversion format, use the previous turns of conversation between user and assistant as the context, and only compute the loss at the last response from the assistant. stage II: Unified Instruction-Tuning for Ranking and Generation the stage II consists these following parts: SFT data from Stage-I: need to maintain the capability of following instruction. Context-rich QA data: i) standard QA and reading comprehension dataset: DROP, NarrativeQA, Quoref, ROPES, NewsQA, TAT-QA. ii) conversational QA datasets: HumanAnnotatedConvQA, SyntheticConvQA. Retrieval-augmented QA data: SQuAD, WebQuestions. In these two datasets, not all the retrieved contexts contain the answer, thus they can be thought of as involving ‘hard-negative’ contexts. Context ranking data: MS MARCO passage ranking dataset. Retrieval-augmented ranking data:SQuAD, WebQuestions. For each example, combine a gold context with the other retrieved contexts using BM25. LLM is trained to explicitly identify all relevant contexts for the question.a Finally, all the above data will be casted into a standardized QA form ($x$, $c$, $y$), where $x$ is question, $c$ is the corresponding context, and $y$ is the target output answer. Figure 2. The converting form of the standardlized QA form from question, context and answer. (Image source: RankRAG: Unifying Context Ranking with Retrieval-Augmented Generation in LLMs)\nRankRAG Inference: Retrieve-Rerank-Generate Pipeline The process of RankRAG can be described as follows: 1) the retriever $\\mathcal{R}$ retrieves top-$N$ contexts from the knowledge base. 2) the RankRAG model calculates the relavent score between the quetion and retrieved $N$ contexts and only retains the top-$k$ contexts. 3) The top-$k$ contexts, along with the question, are intergrated into a long prompt and fed into the RankRAG model to generate the final answer. ",
+  "wordCount" : "372",
   "inLanguage": "en",
   "datePublished": "2024-02-23T00:00:00Z",
   "dateModified": "2024-02-23T00:00:00Z",
@@ -252,11 +252,11 @@ The authors use 128K SFT examples (e.g., OpenAssistant, Dolly, SODA, ELI5, Self-
 <li><strong>stage II: Unified Instruction-Tuning for Ranking and Generation</strong>
 the stage II consists these following parts:
 <ol>
-<li>SFT data from Stage-I</li>
-<li>Context-rich QA data</li>
-<li>Retrieval-augmented QA data</li>
-<li>Context ranking data</li>
-<li>Retrieval-augmented ranking data
+<li>SFT data from Stage-I: need to maintain the capability of following instruction.</li>
+<li>Context-rich QA data: i) standard QA and reading comprehension dataset: DROP, NarrativeQA, Quoref, ROPES, NewsQA, TAT-QA. ii) conversational QA datasets: HumanAnnotatedConvQA, SyntheticConvQA.</li>
+<li>Retrieval-augmented QA data: SQuAD, WebQuestions. In these two datasets, not all the retrieved contexts contain the answer, thus they can be thought of as involving &lsquo;hard-negative&rsquo; contexts.</li>
+<li>Context ranking data: MS MARCO passage ranking dataset.</li>
+<li>Retrieval-augmented ranking data:SQuAD, WebQuestions. For each example, combine a gold context with the other retrieved contexts using BM25. LLM is trained to explicitly identify all relevant contexts for the question.a
 Finally, all the above data will be casted into a standardized QA form ($x$, $c$, $y$), where $x$ is question, $c$ is the corresponding context, and $y$ is the target output answer.
 <figure>
        <img loading="lazy" src="images/Rank_RAG-exp2.png"
@@ -264,7 +264,9 @@ Finally, all the above data will be casted into a standardized QA form ($x$, $c$
                <p>Figure 2. The converting form of the standardlized QA form from question, context and answer. (Image source: <a href="https://arxiv.org/abs/2407.02485">RankRAG: Unifying Context Ranking with Retrieval-Augmented Generation in LLMs</a>)</p>
            </figcaption>
    </figure>
-</li>
+
+RankRAG Inference: Retrieve-Rerank-Generate Pipeline
+The process of RankRAG can be described as follows: 1) the retriever $\mathcal{R}$ retrieves top-$N$ contexts from the knowledge base. 2) the RankRAG model calculates the relavent score between the quetion and retrieved $N$ contexts and only retains the top-$k$ contexts. 3) The top-$k$ contexts, along with the question, are intergrated into a long prompt and fed into the RankRAG model to generate the final answer.</li>
 </ol>
 </li>
 </ol>
