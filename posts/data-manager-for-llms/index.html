@@ -120,8 +120,8 @@
   "keywords": [
     "pretraining", "continuous pretraining", "data"
   ],
-  "articleBody": "Chinese Dataset English Dataset fineweb: 15 trillion tokens of high quality web data. Thanks to the team from huggingface. They filtered and deduplicated all CommonCrawl between 2013 and 2024. Models trained on FineWeb outperform RefinedWeb, C4, DolmaV1.6, The Pile and SlimPajama. fineweb-edu: curating through many methods from fineweb . Details you must want to know about are here: fineweb data processing technique report.\nclean dataset Huggingface introduces a python library datatrove to process, filter and deduplicate text data at a very large scale.\nSynthetic Data Generation instruction data generation Although some LLMs, like LLaMA, Gemma, have opened their weightings, their alignment data remain private, which obstructs the democratization of AI. The researchers find a way, named MAGPIE1, to generating large-scale alignment data. It is the key point that aligned LLMs can generate user query when we input only the left-side templates up to the right position reserved for user messages.\nFigure 1. The process of self-synthesizing instruction data from aligned LLMs (e.g., LLaMA-8B-Instruct) to create a high quality instruction dataset. (Image source: MAGPIE: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing)\nConcretely, the pipeline of MAGPIE is below:\nStep 1: Instruction Gneration: Magpie crafts an input query in the format of the predefined instruction template of the LLM. This query defines only the role of instruction provider (e.g., user), and does not provide any instruction. The auto-regressive LLM has been fine-tuned using instruction data in the format of the predefined instruction template. Thus, the LLM autonomously generates an instruction when the query crafted by Magpie is given as an input. Step 2: Response Generation: Magpie sends the instruction to the LLM to generate the responses. From the results of experiments, after fine-tuning LLaMA-8B-Base, the instruction dataset from MAGPIE outperforms other public datasets. Xu et al., MAGPIE: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing, 2024 ↩︎\n",
-  "wordCount" : "311",
+  "articleBody": "Chinese Dataset English Dataset fineweb: 15 trillion tokens of high quality web data. Thanks to the team from huggingface. They filtered and deduplicated all CommonCrawl between 2013 and 2024. Models trained on FineWeb outperform RefinedWeb, C4, DolmaV1.6, The Pile and SlimPajama. fineweb-edu: curating through many methods from fineweb . Details you must want to know about are here: fineweb data processing technique report.\nclean dataset Huggingface introduces a python library datatrove to process, filter and deduplicate text data at a very large scale.\nSynthetic Data Generation instruction data generation Although some LLMs, like LLaMA, Gemma, have opened their weightings, their alignment data remain private, which obstructs the democratization of AI. The researchers find a way, named MAGPIE1, to generating large-scale alignment data. It is the key point that aligned LLMs can generate user query when we input only the left-side templates up to the right position reserved for user messages.\nFigure 1. The process of self-synthesizing instruction data from aligned LLMs (e.g., LLaMA-8B-Instruct) to create a high quality instruction dataset. (Image source: MAGPIE: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing)\nConcretely, the pipeline of MAGPIE is below:\nStep 1: Instruction Gneration: Magpie crafts an input query in the format of the predefined instruction template of the LLM. This query defines only the role of instruction provider (e.g., user), and does not provide any instruction. The auto-regressive LLM has been fine-tuned using instruction data in the format of the predefined instruction template. Thus, the LLM autonomously generates an instruction when the query crafted by Magpie is given as an input. Step 2: Response Generation: Magpie sends the instruction to the LLM to generate the responses. From the results of experiments, after fine-tuning LLaMA-8B-Base, the instruction dataset from MAGPIE outperforms other public datasets. ocr-free data generation MLLMs have been struggling in the task of text extraction from images. It is common to use OCR to extract text and then decode the key information in traditional ways, which requires much extra computation. It is now taken for granted that OCR-free methods will handle these tasks after MLLM (e.g., GPT4V) are developed. SynthDoG2 proposes a way for generating synthetic datasets at a large scale.\nXu et al., MAGPIE: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing, 2024 ↩︎\nKim et al., OCR-free Document Understanding Transformer, ECCV 2022 ↩︎\n",
+  "wordCount" : "389",
   "inLanguage": "en",
   "datePublished": "2024-01-04T00:00:00Z",
   "dateModified": "2024-01-04T00:00:00Z",
@@ -239,7 +239,9 @@
                     <a href="#synthetic-data-generation" aria-label="Synthetic Data Generation">Synthetic Data Generation</a><ul>
                         
                 <li>
-                    <a href="#instruction-data-generation" aria-label="instruction data generation">instruction data generation</a>
+                    <a href="#instruction-data-generation" aria-label="instruction data generation">instruction data generation</a></li>
+                <li>
+                    <a href="#ocr-free-data-generation" aria-label="ocr-free data generation">ocr-free data generation</a>
                 </li>
             </ul>
             </li>
@@ -269,11 +271,16 @@
 <li><strong>Step 2: Response Generation</strong>: Magpie sends the instruction to the LLM to generate the responses.
 From the results of experiments, after fine-tuning LLaMA-8B-Base, the instruction dataset from MAGPIE outperforms other public datasets.</li>
 </ol>
+<h4 id="ocr-free-data-generation">ocr-free data generation<a hidden class="anchor" aria-hidden="true" href="#ocr-free-data-generation">#</a></h4>
+<p>MLLMs have been struggling in the task of text extraction from images. It is common to use OCR to extract text and then decode the key information in traditional ways, which requires much extra computation. It is now taken for granted that OCR-free methods will handle these tasks after MLLM (e.g., GPT4V) are developed. SynthDoG<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> proposes a way for generating synthetic datasets at a large scale.</p>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1">
 <p>Xu et al., <a href="https://arxiv.org/pdf/2406.08464">MAGPIE: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing</a>, 2024&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Kim et al., <a href="https://arxiv.org/abs/2111.15664">OCR-free Document Understanding Transformer</a>, ECCV 2022&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
