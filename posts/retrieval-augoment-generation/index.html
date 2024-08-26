@@ -120,8 +120,8 @@
   "keywords": [
     "RAG", "retrieval augmented generation"
   ],
-  "articleBody": "RankRAG LLMs are not good at reading too many chunked contexts (e.g., top-100) even with the long-context window. RankRAG aims to design an RAG instruction tuning pipeline that uses a single language model to achieve both high-recall context extraction and high-quality content generation. It is the most significant achievement that both context ranking and answer generation are considered in this framework. Figure 1. The pipeline of RankRAG. (Image source: RankRAG: Unifying Context Ranking with Retrieval-Augmented Generation in LLMs)\nstage I: Supervised Fine-Tuning (SFT) The authors use 128K SFT examples (e.g., OpenAssistant, Dolly, SODA, ELI5, Self-Istruct, Unnatural Instructions) in total, and take the multi-turn conversion format, use the previous turns of conversation between user and assistant as the context, and only compute the loss at the last response from the assistant. stage II: Unified Instruction-Tuning for Ranking and Generation the stage II consists of these following parts: SFT data from Stage-I: need to maintain the capability of following instruction. Context-rich QA data: i) standard QA and reading comprehension dataset: DROP, NarrativeQA, Quoref, ROPES, NewsQA, TAT-QA. ii) conversational QA datasets: HumanAnnotatedConvQA, SyntheticConvQA. Retrieval-augmented QA data: SQuAD, WebQuestions. In these two datasets, not all the retrieved contexts contain the answer, thus they can be thought of as involving ‘hard-negative’ contexts. Context ranking data: MS MARCO passage ranking dataset. Retrieval-augmented ranking data:SQuAD, WebQuestions. For each example, combine a gold context with the other retrieved contexts using BM25. LLM is trained to explicitly identify all relevant contexts for the question. Finally, all the above data will be cast into a standardized QA form ($x$, $c$, $y$), where $x$ is question, $c$ is the corresponding context, and $y$ is the target output answer. Figure 2. The converting form of the standardlized QA form from question, context and answer. (Image source: RankRAG: Unifying Context Ranking with Retrieval-Augmented Generation in LLMs)\nRankRAG Inference: Retrieve-Rerank-Generate Pipeline The process of RankRAG can be described as follows: 1) the retriever $\\mathcal{R}$ retrieves top-$N$ contexts from the knowledge base. 2) the RankRAG model calculates the relevant score between the quetion and retrieved $N$ contexts and only retains the top-$k$ contexts. 3) The top-$k$ contexts, along with the question, are integrated into a long prompt and fed into the RankRAG model to generate the final answer. ",
-  "wordCount" : "373",
+  "articleBody": "Rewrite-Retrieve-Read This work introduces a new framework, Rewrite-Retrieve-Read1 instead of the previous retrieve-then-read for the retrieval-augmented LLMs from the perspective of the query rewriting.\nEfficientRAG Standard RAG struggle to handle complex questions like multi-hop queries. In this paper, the authors introduce EfficientRAG, which iteratively generates new queries\nRankRAG LLMs are not good at reading too many chunked contexts (e.g., top-100) even with the long-context window. RankRAG aims to design an RAG instruction tuning pipeline that uses a single language model to achieve both high-recall context extraction and high-quality content generation. It is the most significant achievement that both context ranking and answer generation are considered in this framework. Figure 1. The pipeline of RankRAG. (Image source: RankRAG: Unifying Context Ranking with Retrieval-Augmented Generation in LLMs)\nstage I: Supervised Fine-Tuning (SFT) The authors use 128K SFT examples (e.g., OpenAssistant, Dolly, SODA, ELI5, Self-Istruct, Unnatural Instructions) in total, and take the multi-turn conversion format, use the previous turns of conversation between user and assistant as the context, and only compute the loss at the last response from the assistant. stage II: Unified Instruction-Tuning for Ranking and Generation the stage II consists of these following parts: SFT data from Stage-I: need to maintain the capability of following instruction. Context-rich QA data: i) standard QA and reading comprehension dataset: DROP, NarrativeQA, Quoref, ROPES, NewsQA, TAT-QA. ii) conversational QA datasets: HumanAnnotatedConvQA, SyntheticConvQA. Retrieval-augmented QA data: SQuAD, WebQuestions. In these two datasets, not all the retrieved contexts contain the answer, thus they can be thought of as involving ‘hard-negative’ contexts. Context ranking data: MS MARCO passage ranking dataset. Retrieval-augmented ranking data:SQuAD, WebQuestions. For each example, combine a gold context with the other retrieved contexts using BM25. LLM is trained to explicitly identify all relevant contexts for the question. Finally, all the above data will be cast into a standardized QA form ($x$, $c$, $y$), where $x$ is question, $c$ is the corresponding context, and $y$ is the target output answer. Figure 2. The converting form of the standardlized QA form from question, context and answer. (Image source: RankRAG: Unifying Context Ranking with Retrieval-Augmented Generation in LLMs)\nRankRAG Inference: Retrieve-Rerank-Generate Pipeline The process of RankRAG can be described as follows: 1) the retriever $\\mathcal{R}$ retrieves top-$N$ contexts from the knowledge base. 2) the RankRAG model calculates the relevant score between the quetion and retrieved $N$ contexts and only retains the top-$k$ contexts. 3) The top-$k$ contexts, along with the question, are integrated into a long prompt and fed into the RankRAG model to generate the final answer. Ma et al., Query Rewriting for Retrieval-Augmented Large Language Models, 2023 ↩︎\n",
+  "wordCount" : "431",
   "inLanguage": "en",
   "datePublished": "2024-02-23T00:00:00Z",
   "dateModified": "2024-02-23T00:00:00Z",
@@ -219,7 +219,7 @@
     <div class="post-description">
       A series of papers about RAG.
     </div>
-    <div class="post-meta"><span title='2024-02-23 00:00:00 +0000 UTC'>February 23, 2024</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Loong
+    <div class="post-meta"><span title='2024-02-23 00:00:00 +0000 UTC'>February 23, 2024</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Loong
 
 </div>
   </header> <div class="toc">
@@ -230,6 +230,10 @@
 
         <div class="inner"><ul>
                 <li>
+                    <a href="#rewrite-retrieve-read" aria-label="Rewrite-Retrieve-Read">Rewrite-Retrieve-Read</a></li>
+                <li>
+                    <a href="#efficientrag" aria-label="EfficientRAG">EfficientRAG</a></li>
+                <li>
                     <a href="#rankrag" aria-label="RankRAG">RankRAG</a>
                 </li>
             </ul>
@@ -237,7 +241,11 @@
     </details>
 </div>
 
-  <div class="post-content"><h4 id="rankrag">RankRAG<a hidden class="anchor" aria-hidden="true" href="#rankrag">#</a></h4>
+  <div class="post-content"><h4 id="rewrite-retrieve-read">Rewrite-Retrieve-Read<a hidden class="anchor" aria-hidden="true" href="#rewrite-retrieve-read">#</a></h4>
+<p>This work introduces a new framework, Rewrite-Retrieve-Read<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> instead of the previous retrieve-then-read for the retrieval-augmented LLMs from the perspective of the query rewriting.</p>
+<h4 id="efficientrag">EfficientRAG<a hidden class="anchor" aria-hidden="true" href="#efficientrag">#</a></h4>
+<p>Standard RAG struggle to handle complex questions like multi-hop queries. In this paper, the authors introduce EfficientRAG, which iteratively generates new queries</p>
+<h4 id="rankrag">RankRAG<a hidden class="anchor" aria-hidden="true" href="#rankrag">#</a></h4>
 <p>LLMs are not good at reading too many chunked contexts (e.g., top-100) even with the long-context window. RankRAG aims to design an RAG instruction tuning pipeline that uses a single language model to achieve both high-recall context extraction and high-quality content generation. It is the most significant achievement that both context ranking and answer generation are considered in this framework.
 <figure>
     <img loading="lazy" src="images/Rank_RAG-exp1.png"
@@ -270,6 +278,14 @@ The process of RankRAG can be described as follows: 1) the retriever $\mathcal{R
 </ol>
 </li>
 </ol>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Ma et al., <a href="https://arxiv.org/abs/2305.14283">Query Rewriting for Retrieval-Augmented Large Language Models</a>, 2023&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
 
 
   </div>
