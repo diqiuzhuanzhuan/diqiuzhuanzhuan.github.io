@@ -28,6 +28,13 @@
       <description>A series of papers about RAG.</description>
     </item>
     <item>
+      <title>LLM Inference</title>
+      <link>https://diqiuzhuanzhuan.github.io/posts/llm-inference/</link>
+      <pubDate>Thu, 22 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/posts/llm-inference/</guid>
+      <description>The fast inference solutions on LLMs.</description>
+    </item>
+    <item>
       <title>Align LLMs</title>
       <link>https://diqiuzhuanzhuan.github.io/posts/align-llms/</link>
       <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
