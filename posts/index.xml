@@ -56,6 +56,13 @@
       <description>A series of papers about LLM Agent.</description>
     </item>
     <item>
+      <title>Prompt Engineering with LLMs</title>
+      <link>https://diqiuzhuanzhuan.github.io/posts/prompt-engineering/</link>
+      <pubDate>Thu, 11 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/posts/prompt-engineering/</guid>
+      <description>A series of papers about problems about prompt engineering.</description>
+    </item>
+    <item>
       <title>Data for LLMs</title>
       <link>https://diqiuzhuanzhuan.github.io/posts/data-manager-for-llms/</link>
       <pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate>
