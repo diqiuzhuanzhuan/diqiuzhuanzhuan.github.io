@@ -21,6 +21,13 @@
       <description>content about serving LLMs.</description>
     </item>
     <item>
+      <title>LLM Evaluation</title>
+      <link>https://diqiuzhuanzhuan.github.io/posts/llm-evaluation/</link>
+      <pubDate>Thu, 11 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://diqiuzhuanzhuan.github.io/posts/llm-evaluation/</guid>
+      <description>How do we evaluate LLMs.</description>
+    </item>
+    <item>
       <title>RAG</title>
       <link>https://diqiuzhuanzhuan.github.io/posts/retrieval-augoment-generation/</link>
       <pubDate>Fri, 23 Feb 2024 00:00:00 +0000</pubDate>
