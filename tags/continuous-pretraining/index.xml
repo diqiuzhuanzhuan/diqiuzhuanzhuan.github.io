@@ -11,15 +11,8 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 04 Jan 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://diqiuzhuanzhuan.github.io/tags/continuous-pretraining/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Align LLMs</title>
-      <link>https://diqiuzhuanzhuan.github.io/posts/align-llms/</link>
-      <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>https://diqiuzhuanzhuan.github.io/posts/align-llms/</guid>
-      <description>A series of papers about Aligning LLMs.</description>
-    </item>
     <item>
       <title>Data for LLMs</title>
       <link>https://diqiuzhuanzhuan.github.io/posts/data-manager-for-llms/</link>
